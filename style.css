@@ -1,0 +1,287 @@
+:root {
+  --purple: rgba(50, 0, 100, 0.9);
+  --white: white;
+  --secondpurple: #790d9185;
+  --black: black;
+  --thirdpurple: #9145c3;
+  --fourpurple: #6a0dad;
+}
+/* General Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* Body Styling */
+.page_one {
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(135deg, var(--fourpurple), var(--thirdpurple));
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  transition: background 1s ease-in-out;
+  animation: backgroundAnimation 5s infinite alternate ease-in-out;
+}
+@keyframes backgroundAnimation {
+  0% {
+    background: linear-gradient(135deg, var(--fourpurple), var(--thirdpurple));
+  }
+  50% {
+    background: linear-gradient(135deg, var(--fourpurple), var(--thirdpurple));
+  }
+  100% {
+    background: linear-gradient(135deg, var(--fourpurple), var(--thirdpurple));
+  }
+}
+
+/* Navbar Styling */
+.navbar {
+  width: 100%;
+  background-color: var(--purple);
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+  transition: background 0.3s ease-in-out;
+}
+
+/* Logo Animation */
+.logo {
+  width: 100px;
+  height: 70px;
+  animation: logoBounce 2s infinite alternate;
+}
+
+@keyframes logoBounce {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.1);
+  }
+}
+
+/* Search Bar */
+.navbar .search-container {
+  display: flex;
+  align-items: center;
+}
+
+.navbar input {
+  padding: 8px;
+  width: 200px;
+  border: none;
+  border-radius: 20px;
+  outline: none;
+  transition: width 0.3s ease-in-out;
+}
+
+.navbar input:focus {
+  width: 250px;
+}
+
+.navbar button {
+  padding: 8px 12px;
+  margin-left: 10px;
+  cursor: pointer;
+  border: none;
+  background-color: var(--fourpurple);
+  color: white;
+  border-radius: 20px;
+  transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
+}
+
+.navbar button:hover {
+  background-color: #790d9185;
+  transform: scale(1.1);
+}
+
+/* Container */
+.container {
+  background-color: var(--black);
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0px 0px 15px var(--black);
+  width: 100%;
+  margin-top: 100px;
+  border-radius: 10px;
+  transition: transform 0.5s ease-in-out;
+  animation: fadeIn 1s ease-in-out;
+}
+
+/* Movie Results */
+#movie-results {
+  margin-top: 40px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: 15px;
+}
+
+/* Movie Cards */
+.movie {
+  width: 220px;
+  background-color: var(--white);
+  padding: 15px;
+  border-radius: 8px;
+  box-shadow: 0px 5px 10px black;
+  text-align: center;
+  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+  opacity: 0;
+  animation: fadeIn 0.5s forwards ease-in-out, pulse 3s infinite alternate;
+}
+
+.movie:hover {
+  transform: translateY(-5px) rotate(-1deg);
+  box-shadow: 0px 10px 20px var(--black);
+}
+
+/* Movie Image */
+.movie img {
+  width: 90%;
+  border-radius: 5px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.movie img:hover {
+  transform: scale(1.05);
+}
+
+/* Movie Title */
+.movie h3 {
+  margin-top: 20px;
+  font-size: 15px;
+  color: #4b0082;
+  align-items: center;
+}
+
+/* Footer */
+.footer {
+  width: 100%;
+  height: 50px;
+  background-color: var(--purple);
+  color: white;
+  text-align: center;
+  padding: 15px;
+  position: static;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulse {
+  from {
+    transform: scale(1);
+  }
+  to {
+    transform: scale(1.02);
+  }
+}
+a {
+  text-decoration: none;
+  color: white !important;
+}
+.links_navbar {
+  display: flex;
+  align-items: center;
+}
+.link_of_navbar_a {
+  display: flex;
+  margin-left: 300px;
+  gap: 60px;
+  font-size: 20px;
+}
+/* page two */
+#movie-container_trending {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  padding: 20px;
+  margin-top: 80px;
+}
+
+.movie_trending {
+  background-color: #2a2a2a;
+  border-radius: 8px;
+  padding: 10px;
+  transition: transform 0.3s;
+  text-align: center;
+}
+
+.movie_trending:hover {
+  transform: scale(1.05);
+}
+
+.movie_trending img {
+  width: 100%;
+  border-radius: 5px;
+}
+
+.movie_trending h2 {
+  font-size: 16px;
+  margin: 10px 0;
+  color: white;
+}
+/* Home Page Styles */
+.home_page {
+  background: url("https://wallpapercave.com/wp/wp2878133.jpg");
+  background-size: cover;
+  background-size: 100% 100%;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  color: white;
+}
+
+.home_container {
+  background: var(--black);
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0px 0px 15px black;
+}
+
+h1 {
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+p {
+  font-size: 1.2rem;
+  margin-bottom: 20px;
+}
+
+.button_container {
+  display: flex;
+  gap: 20px;
+  justify-content: center;
+}
+
+.btn {
+  background: var(--secondpurple);
+  color: white;
+  padding: 12px 24px;
+  font-size: 1.2rem;
+  text-decoration: none;
+  border-radius: 5px;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: var(--thirdpurple);
+}
